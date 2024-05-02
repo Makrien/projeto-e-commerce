@@ -39,6 +39,7 @@
 
 .cart-items {
   display: flex;
+  flex-direction: column;
 }
 
 .cart-price {

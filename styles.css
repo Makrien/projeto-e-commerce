@@ -14,11 +14,13 @@
   --font-oswaldo: "Oswald", sans-serif;
 }
 
+.card-produto,
 a {
   text-decoration: none;
   color: var(--rosa);
 }
 
+.card-produto:hover,
 a:hover {
   color: var(--lilas);
 }
@@ -289,15 +291,12 @@ header {
 .card-produto {
   margin: 1em .5em;
   padding: 2em 0;
-}
-
-.card-produto a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 16em;
-  max-height: 24em;
+  max-height: 25em;
   margin: 1em;
   text-align: center;
   cursor: crosshair;
@@ -307,7 +306,7 @@ header {
   font-size: 1em;
   font-weight: bold;
   font-family: monospace;
-  max-height: 2.2em;
+  height: 2.2em;
   overflow: hidden;
 }
 

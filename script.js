@@ -47,23 +47,52 @@ aHardware.addEventListener('click', () => {
 
 let productsArray = []
 
-function Products(title, price, imgSource) {
+function Products(title, price, priceFloat, imgSource) {
   this.title = title
   this.price = price
+  this.priceFloat = priceFloat
   this.imgSource = imgSource
 }
 
-const addToCartButtons = document.getElementsByClassName('button-85')
-console.log(addToCartButtons)
+const addToCartButtons = document.querySelectorAll('.button-85')
+console.log(addToCartButtons[0])
 
-// for (let i = 0; i < addToCartButtons.length; i++) {
-//   addToCartButtons[i].addEventListener('click', () => {
-//     const title = document.getElementsByClassName('produto-titulo')[0].textContent
-//     console.log(title)
-//   })
-// }
+for (let i = 0; i < addToCartButtons.length; i++) {
+  addToCartButtons[i].addEventListener('click', () => {
+    let title = document.querySelectorAll('.produto-titulo')[i].textContent
+    let price = document.querySelectorAll('.preco-item')[i].textContent
+    let priceFloat = parseFloat(document.querySelectorAll('.preco-item')[i].textContent.replace('R$ ', ''))
+    let imgSource = document.querySelectorAll('.card-produto-imagem')[i].src
+    let product = new Products(title, price, priceFloat, imgSource)
+    productsArray.push(product)
+    console.log(productsArray)
+    addItemToCart(title, price, imgSource)
+  })
+}
 
-
-function addToProductsArray() {
-
+function addItemToCart(title, price, imgSource) {
+  let cartRow = document.createElement('div')
+  cartRow.classList.add('cart-row')
+  let cartItems = document.querySelectorAll('.cart-items')[0]
+  let cartItemTitles = cartItems.querySelectorAll('.cart-item-title')
+  for (let i = 0; i < cartItemTitles.length; i++) {
+    if (cartItemTitles[i].innerText === title) {
+      alert('Produto já adicionado ao carrinho')
+      return
+    }
+  }
+  let cartRowContents =  `
+    <div class="cart-item cart-column">
+        <img class="cart-item-image" src="${imgSource}" width="100" height="100">
+        <span class="cart-item-title">${title}</span>
+    </div>
+    <span class="cart-price cart-column">${price}</span>
+    <div class="cart-quantity cart-column">
+        <input class="cart-quantity-input" type="number" value="1">
+        <button class="btn btn-danger" type="button">REMOVE</button>
+    </div>`
+  cartRow.innerHTML = cartRowContents
+  cartItems.append(cartRow)
+  cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
+  cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
