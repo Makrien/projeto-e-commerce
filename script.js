@@ -102,6 +102,11 @@ function addItemToCart(title, price, imgSource) {
     </div>`
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
-  // cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
+  cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
   // cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function removeCartItem(event) {
+  let buttonClicked = event.target
+  
 }
