@@ -6,6 +6,8 @@ const aPerifericos = document.querySelector('#id-perifericos')
 const aHardware = document.querySelector('#id-hardware')
 const dropdownPerifericos = document.querySelector('.dropdown-perifericos')
 const dropdownHardware = document.querySelector('.dropdown-hardware')
+const carrinhoBtn = document.querySelector('.carrinho')
+const carrinhoContainer = document.querySelector('.container')
 
 carrinhoIcone.addEventListener('click', () => {
   if (cartSection.style.display === 'none') {
@@ -41,6 +43,13 @@ aHardware.addEventListener('click', () => {
   }
 })
 
+carrinhoBtn.addEventListener('click', () => {
+  if (carrinhoContainer.style.display === 'none') {
+    carrinhoContainer.style.display = 'block'
+  } else {
+    carrinhoContainer.style.display = 'none'
+  }
+})
 
 
 /* ===================== carrinho.html =========================== */
@@ -93,6 +102,6 @@ function addItemToCart(title, price, imgSource) {
     </div>`
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
-  cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
-  cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
+  // cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
+  // cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }

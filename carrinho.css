@@ -1,10 +1,16 @@
 .container {
-  height: 100vh;
-  padding-top: 10%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 12% 1.5em 1.5em 0;
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  right: 0px;
+  top: 20%;
+  padding: 2em;
+  border-radius: 10% 0px 0px 10%;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 15px 30px -12px;
 }
+
 
 .section-header {
   font-family: monospace;
