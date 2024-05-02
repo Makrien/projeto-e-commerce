@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juju Eletro</title>
+  <link rel="icon" href="./media-website/logo.png" type="image/icon type">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./normalise.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div id="content" >
+    <header>
+      <div class="upper-header">
+        <div class="header-logo">
+          <a class="logo-text" href="./index.html">
+            <img class="header-logo-img" src="./media-website/logo.png" alt="logo">
+            <span>Juju Eletro</span>
+          </a>
+        </div>
+        <div class="header-search">
+          <form action="">
+            <input type="search" placeholder="Pesquise o produto que deseja" aria-label="campo de busca">
+            <button class="button-64" role="button" aria-label="botão de pesquisa"><span>Pesquisar</span></button>
+          </form>
+        </div>
+        <div class="shop-account" aria-label="conta do usuário">
+          <div class="menu-auth">
+            <span class="menu-auth-icon">
+              Login
+            </span>
+          </div>
+          <div class="menu-auth-user">
+            <div class="menu-auth-text">
+              <a href="">Entre</a> ou <a href="">Cadastre-se</a>
+            </div>
+          </div>
+        </div>
+        <ul class="header-menu-icons">
+          <li>
+            <div aria-label="favoritos">
+              <img  class="favoritos" src="./media-website/heart.png" alt="imagem favoritos(coração)">
+            </div>
+          </li>
+          <li>
+            <div aria-label="carrinho">
+              <img class="carrinho" src="./media-website/carrinho.png" alt="imagem carrinho">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="header-main-menu">
+        <div class="dropdown">
+          <div class="header-main-menu-button">
+            <button class="button-64 dropdown-toggle" role="button"><span class="text">Categorias</span></button>
+            <ul class="dropdown-list">
+              <li>
+                <div id="id-perifericos">Periféricos</div>            
+               </li>
+              <li>
+                <div id="id-hardware">Hardware</div>
+              </li>
+              <li>
+                <a href="./impressoras.html">Impressoras</a>
+              </li>
+              <li>
+                <a href="./notebooks.html">Notebooks</a>
+              </li>
+              <li>
+                <a href="./gabinetes.html">Gabinetes</a>
+              </li>
+              <li>
+                <a href="./smartwatch.html">Smartwatch</a>
+              </li>   
+              
+              <!-- DROPDOWN PERIFERICOS-->
+              
+              <ul class="dropdown-perifericos">
+                <li>
+                  <a href="./perifericos-pages/headset.html">Headset</a>
+                </li>
+                <li>
+                  <a href="./perifericos-pages/monitor.html">Monitores</a>
+                </li>
+                <li>
+                  <a href="./perifericos-pages/mouse.html">Mouse</a>
+                </li>
+                <li>
+                  <a href="./perifericos-pages/mousepad.html">Mousepad</a>
+                </li>
+                <li>
+                  <a href="./perifericos-pages/teclado.html">Teclado</a>
+                </li>
+                <li>
+                  <a href="./perifericos-pages/webcam.html">Webcam</a>
+                </li>       
+              </ul>   
+              
+              <!--DROPDOWN HARDWARE-->
+             
+              <ul class="dropdown-hardware">
+                <li>
+                  <a href="./hardware-pages/cooler.html">Fans</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/fonte.html">Fontes</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/gpu.html">Placas de Vídeo</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/hd.html">Disco Rígido / HD's</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/placa-mae.html">Placa mãe</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/processador.html">Processador</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/ram.html">Memória Ram</a>
+                </li>
+                <li>
+                  <a href="./hardware-pages/ssd.html">SSD</a>
+                </li>
+            </ul>
+          
+           
+            </ul>     
+
+          
+          </div>
+        </div>
+        <div class="main-menu">
+          <ul class="main-menu-list">         
+            <li>
+              <a href="./promocoes.html">Promoções</a>
+            </li>                           
+            <li>
+              <a href="./produtos-gamer.html">Produtos Gamer</a>              
+            </li>
+            <li>
+              <a href="">Anime</a>              
+            </li>
+            <li>
+              <a href="">Atendimento</a>              
+            </li>
+            <li>
+              <a href="">Sobre Nós</a>              
+            </li>                
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="banner">
+      <video width="100%" autoplay loop muted>
+        <source src="./media-website/banner.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <main id="produtos">
+      <div class="grade-produtos">
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/gabinetes/gabinete-1.jpg" alt="imagem gabinete">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">Gabinete SuperFrame, Micro ATX, RGB, Black</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 559,90</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 499,90 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 49,99 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/hardware/disco-rigido/hd-1.png" alt="imagem disco rígido">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">HD WD Purple Pro, 3.5', 18tb</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 3999,90</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 3799,90 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 379,99 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/impressoras/impressora-1.jpg" alt="imagem impressora">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">Impressora Multifuncional HP Smart Tank 724</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 949,00</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 859,00 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 85,90 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/notebooks/notebook-1.jpg" alt="imagem notebook">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">Acer Aspire 5, Intel Core i5 1135G7, NVIDIA GeForce MX350, 8GB DDR4, SSD 240GB, Windows 11</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 2.999,00</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 2.599,00 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 259,90 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/perifericos/headset/headset-1.jpg" alt="imagem headset">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">Headset Gamer Razer Blackshark V2 X, Múltiplas Plataformas, Black</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 249,90</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 219,00 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 21,90 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-produto">
+          <a href="">
+            <img class="card-produto-imagem" src="./img-produtos/smartwatch/smartwatch-1.jpg" alt="imagem smartwatch">
+            <div class="frete-selo">
+              <strong>FRETE GRÁTIS</strong>
+            </div>
+            <h3 class="produto-titulo" aria-label="título do produto">Relógio Smartwatch Xiaomi Imilab W12, Bluetooth, Black</h3>
+            <div class="preco-antes">
+              <span><del>De: R$ 325,00</del></span>
+            </div>
+            <div class="preco-atual">
+              <span aria-label="preço do produto a vista">
+                <strong>Por: R$ 269,90 </strong><span>à vista</span>
+              </span>
+            </div>
+            <div class="preco-parcelas" aria-label="parcelas do produto">
+              <p>Até 10x de R$ 26,99 sem juros</p>
+            </div>
+            <div class="botao-comprar">
+              <button class="button-85" role="button" aria-label="botão comprar">Adicionar ao <img class="carrinho-btn" src="./media-website/carrinho-branco.png" alt="carrinho"></button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer class="footer-container">
+      <div>   
+        <img class="footer-picture" src="./media-website/facebook.png" alt="facebook-logo"> Juju Eletro
+        <img class="footer-picture" src="./media-website/instagram.png" alt="instagram-logo"> Juju Eletro 
+        <img class="footer-picture-security" src="./media-website/siteseguro.png" alt="siteseguro-logo">
+        <div class="footer-text">
+          © Juju Eletro
+        </div>
+        <div class="footer-text endereco">
+         Av. Espanha, 410,  96740-959, Arroio dos Ratos - RS
+        </div>
+      </div>
+      
+    </footer>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</body>
+
+</html>
