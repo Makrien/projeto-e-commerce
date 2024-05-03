@@ -1,5 +1,6 @@
 .container {
   display: none;
+  flex-direction: column;
   background-color: #fff;
   position: absolute;
   width: 70%;
@@ -11,8 +12,6 @@
   box-shadow: rgba(0, 0, 0, 0.5) 0 15px 30px -12px;
   overflow-y: scroll;
 }
-
-
 
 .section-header {
   font-family: monospace;

@@ -8,6 +8,8 @@ const dropdownPerifericos = document.querySelector('.dropdown-perifericos')
 const dropdownHardware = document.querySelector('.dropdown-hardware')
 const carrinhoBtn = document.querySelector('.carrinho')
 const carrinhoContainer = document.querySelector('.container')
+const checkoutSection = document.querySelector('.checkout-section')
+const checkoutBtn = document.querySelector('.checkout-btn')
 
 carrinhoIcone.addEventListener('click', () => {
   if (cartSection.style.display === 'none') {
@@ -45,12 +47,15 @@ aHardware.addEventListener('click', () => {
 
 carrinhoBtn.addEventListener('click', () => {
   if (carrinhoContainer.style.display === 'none') {
-    carrinhoContainer.style.display = 'block'
+    carrinhoContainer.style.display = 'flex'
   } else {
     carrinhoContainer.style.display = 'none'
   }
 })
 
+checkoutBtn.addEventListener('click', () => {
+  alert('Obrigado por comprar na Juju Eletro!')
+})
 
 /* ===================== carrinho.html =========================== */
 
@@ -84,12 +89,15 @@ function ready() {
 }
 
 function purchaseClicked() {
-  alert('Obrigado por comprar na Juju Eletro!')
   let cartItems = document.querySelectorAll('.cart-items')[0]
   while (cartItems.hasChildNodes()) {
       cartItems.removeChild(cartItems.firstChild)
   }
-  updateCartTotal()
+  if (checkoutSection.style.display === 'none') {
+    checkoutSection.style.display = 'flex'
+  } else {
+    checkoutSection.style.display = 'none'
+  }
 }
 
 function removeCartItem(event) {
@@ -159,6 +167,8 @@ function updateCartTotal() {
   total = Math.round(total * 100) / 100
   total = total.toFixed(2)
   document.querySelector('.cart-total-price').innerText = `R$ ${total}`
+  document.querySelector('.checkout-total').innerText = `R$ ${total}`
+  document.querySelector('.subtotal').innerText = `R$ ${total}`
 }
 
 const addToCartButtons = document.querySelectorAll('.button-85')

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./normalise.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./carrinho.css">
+  <link rel="stylesheet" href="./checkout.css">
   <script src="./script.js" defer></script>
 </head>
 
@@ -317,6 +318,56 @@
       </div>
       <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
     </section>
+
+
+    <div class="checkout-section">
+      <div class="payment-type">
+        <h1>ESCOLHA A FORMA DE PAGAMENTO</h1>
+        <form action="#">
+          <div class="payment-method">
+            <input type="radio" id="pix" name="payment-method" checked>
+            <label for="pix">PIX</label>
+          </div>
+          <div class="payment-method">
+            <input type="radio" id="credit-card" name="payment-method">
+            <label for="credit-card">Cartão de Crédito</label>
+          </div>
+          <div class="payment-method">
+            <input type="radio" id="debit-card" name="payment-method">
+            <label for="debit-card">Cartão de Débito</label>
+          </div>
+          <div class="payment-method">
+            <input type="radio" id="paypal" name="payment-method">
+            <label for="paypal">PayPal</label>
+          </div>
+          <div class="payment-method">
+            <input type="radio" id="bank-transfer" name="payment-method">
+            <label for="bank-transfer">Transferência Bancária</label>
+          </div>
+        </form>
+      </div>
+      <div class="purchase-info">
+        <div class="user-data">
+          <div class="checkout-username">Nome do usuário</div>
+          <div class="checkout-address">Endereço</div>
+          <div class="checkout-transp">Frete: Juju Express<br>Entrega em até 2 dias</div>
+        </div>
+        <div class="discount-coupon">
+          <form action="">
+            <input type="text" placeholder="Cupom de desconto">
+            <button class="btn btn-primary" type="button">APLICAR</button>
+          </form>
+        </div>
+        <div class="price-info">
+          <div class="checkout-subtotal"><span>Subtotal</span><span class="subtotal"></span></div>
+          <div class="checkout-shipping"><span>Frete grátis</span></div>
+        </div>
+        <div class="checkout-itens">
+          <span>TOTAL</span><span class="checkout-total"></span>
+        </div>
+        <button class="checkout-btn btn-primary" type="button">FECHAR PEDIDO</button>
+      </div>
+    </div>
 
     <footer class="footer-container">
       <div>   
