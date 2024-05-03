@@ -54,29 +54,65 @@ carrinhoBtn.addEventListener('click', () => {
 
 /* ===================== carrinho.html =========================== */
 
-let productsArray = []
-
-function Products(title, price, priceFloat, imgSource) {
-  this.title = title
-  this.price = price
-  this.priceFloat = priceFloat
-  this.imgSource = imgSource
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  ready()
 }
 
-const addToCartButtons = document.querySelectorAll('.button-85')
-console.log(addToCartButtons[0])
+function ready() {
 
-for (let i = 0; i < addToCartButtons.length; i++) {
-  addToCartButtons[i].addEventListener('click', () => {
-    let title = document.querySelectorAll('.produto-titulo')[i].textContent
-    let price = document.querySelectorAll('.preco-item')[i].textContent
-    let priceFloat = parseFloat(document.querySelectorAll('.preco-item')[i].textContent.replace('R$ ', ''))
-    let imgSource = document.querySelectorAll('.card-produto-imagem')[i].src
-    let product = new Products(title, price, priceFloat, imgSource)
-    productsArray.push(product)
-    console.log(productsArray)
-    addItemToCart(title, price, imgSource)
-  })
+  let removeCartItemButtons = document.querySelectorAll('.btn-danger')
+  for (let i = 0; i < removeCartItemButtons.length; i++) {
+      let button = removeCartItemButtons[i]
+      button.addEventListener('click', removeCartItem)
+  }
+
+  let quantityInputs = document.querySelectorAll('.cart-quantity-input')
+  for (let i = 0; i < quantityInputs.length; i++) {
+      let input = quantityInputs[i]
+      input.addEventListener('change', quantityChanged)
+  }
+
+  let addToCartButtons = document.querySelectorAll('.button-85')
+  for (let i = 0; i < addToCartButtons.length; i++) {
+      let button = addToCartButtons[i]
+      button.addEventListener('click', addToCartClicked)
+  }
+
+  document.querySelectorAll('.btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+  alert('Obrigado por comprar na Juju Eletro!')
+  let cartItems = document.querySelectorAll('.cart-items')[0]
+  while (cartItems.hasChildNodes()) {
+      cartItems.removeChild(cartItems.firstChild)
+  }
+  updateCartTotal()
+}
+
+function removeCartItem(event) {
+  let buttonClicked = event.target
+  buttonClicked.parentElement.parentElement.remove()
+  updateCartTotal()
+}
+
+function quantityChanged(event) {
+  let input = event.target
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value = 1
+  }
+  updateCartTotal()
+}
+
+function addToCartClicked(event) {
+  let button = event.target
+  let shopItem = button.parentElement.parentElement
+  let title = shopItem.querySelector('.shop-item-title').innerText
+  let price = shopItem.querySelector('.shop-item-price').innerText
+  let imageSrc = shopItem.querySelector('.shop-item-image').src
+  addItemToCart(title, price, imageSrc)
 }
 
 function addItemToCart(title, price, imgSource) {
@@ -98,15 +134,47 @@ function addItemToCart(title, price, imgSource) {
     <span class="cart-price cart-column">${price}</span>
     <div class="cart-quantity cart-column">
         <input class="cart-quantity-input" type="number" value="1">
-        <button class="btn btn-danger" type="button">REMOVE</button>
+        <button class="btn btn-danger" type="button">REMOVER</button>
     </div>`
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
   cartRow.querySelectorAll('.btn-danger')[0].addEventListener('click', removeCartItem)
-  // cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
+  cartRow.querySelectorAll('.cart-quantity-input')[0].addEventListener('change', quantityChanged)
+
+  updateCartTotal()
 }
 
-function removeCartItem(event) {
-  let buttonClicked = event.target
-  
+function updateCartTotal() {
+  let cartItemContainer = document.querySelectorAll('.cart-items')[0]
+  let cartRows = cartItemContainer.querySelectorAll('.cart-row')
+  let total = 0
+  for (let i = 0; i < cartRows.length; i++) {
+    let cartRow = cartRows[i]
+    let priceElement = cartRow.querySelector('.cart-price')
+    let quantityElement = cartRow.querySelector('.cart-quantity-input')
+    let price = parseFloat(priceElement.innerText.replace('R$ ', ''))
+    let quantity = quantityElement.value
+    total = total + (price * quantity)
+  }
+  total = Math.round(total * 100) / 100
+  total = total.toFixed(2)
+  document.querySelector('.cart-total-price').innerText = `R$ ${total}`
 }
+
+const addToCartButtons = document.querySelectorAll('.button-85')
+for (let i = 0; i < addToCartButtons.length; i++) {
+  addToCartButtons[i].addEventListener('click', () => {
+    let title = document.querySelectorAll('.produto-titulo')[i].textContent
+    let price = document.querySelectorAll('.preco-item')[i].textContent
+    let priceFloat = parseFloat(document.querySelectorAll('.preco-item')[i].textContent.replace('R$ ', ''))
+    let imgSource = document.querySelectorAll('.card-produto-imagem')[i].src
+    addItemToCart(title, price, imgSource)
+  })
+}
+
+
+
+
+
+
+
