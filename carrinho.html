@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./normalise.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./carrinho.css">
+  <link rel="stylesheet" href="./checkout.css">
   <script src="./script.js" defer></script>
 </head>
 
@@ -175,6 +176,60 @@
       </div>
       <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
   </section>
+
+  <div class="checkout-section">
+    <div class="payment-type">
+      <h1>ESCOLHA A FORMA DE PAGAMENTO</h1>
+      <form action="#">
+        <div class="payment-method">
+          <label for="pix"><img class="payment-img" src="./media-website/pagamento-png/pix.png" alt="símbolo pix">PIX</label>
+          <input type="radio" id="pix" name="payment-method" checked>            
+        </div>
+        <div class="payment-method">
+          <label for="credit-card"><img class="payment-img" src="./media-website/pagamento-png/mastercard.png" alt="símbolo mastercard">MasterCard</label>
+          <input type="radio" id="credit-card" name="payment-method">
+        </div>
+        <div class="payment-method">
+          <label for="debit-card"><img class="payment-img" src="./media-website/pagamento-png/visa.png" alt="símbolo pix">Visa</label>
+          <input type="radio" id="debit-card" name="payment-method">
+        </div>
+        <div class="payment-method">
+          <label for="paypal"><img class="payment-img" src="./media-website/pagamento-png/mercado pagopreview.png" alt="símbolo pix">Mercado Pago</label>
+          <input type="radio" id="paypal" name="payment-method">
+        </div>
+        <div class="payment-method">
+          <label for="bank-transfer"><img class="payment-img" src="./media-website/pagamento-png/nubank.png" alt="símbolo pix">Nubank</label>
+          <input type="radio" id="bank-transfer" name="payment-method">
+        </div>
+        <div class="payment-method">
+          <label for="bank-transfer"><img class="payment-img" src="./media-website/pagamento-png/boleto.png" alt="símbolo pix">Boleto</label>
+          <input type="radio" id="bank-transfer" name="payment-method">
+        </div>
+      </form>
+    </div>
+    <div class="purchase-info">
+      <div class="user-data">
+        <div class="checkout-username">Nome do usuário</div>
+        <div class="checkout-address">Endereço</div>
+        <div class="checkout-transp"><span>Frete:</span><span>Juju Express</span></div>
+        <div class="checkout-transp"><span></span><span>Entrega em até 2 dias</span></div>
+      </div>
+      <div style="height: 100px;" class="discount-coupon">
+        <form action="">
+          <input class="coupon-input" type="text" placeholder="Cupom de desconto">
+          <button class="coupon-btn btn-primary" type="button">APLICAR</button>
+        </form>
+      </div>
+      <div class="price-info">
+        <div class="checkout-subtotal"><span>Subtotal</span><span class="subtotal"></span></div>
+        <div class="checkout-shipping"><span>Frete grátis</span></div>
+      </div>
+      <div class="checkout-items">
+        <span>TOTAL</span><span class="checkout-total"></span>
+      </div>
+      <button class="checkout-btn btn-primary" type="button">FECHAR PEDIDO</button>
+    </div>
+  </div>
 
     <footer class="footer-container">
       <div>   

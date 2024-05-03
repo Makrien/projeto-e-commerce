@@ -1,9 +1,79 @@
 .checkout-section {
-  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background-color: aqua;
+  background-color: #fbdaff;
   position: absolute;
   top: 2%;
   margin-top: 8%;
   height: 160%;
+}
+
+.payment-type,
+.purchase-info {
+  background-color: white;
+  margin: -20em 2em 2em 2em;
+  padding: 4em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 40%;
+}
+
+.payment-type {
+  height: 50%;
+}
+
+.purchase-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+}
+
+.payment-method {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  margin: 1em;
+}
+
+.payment-img {
+  width: 1.5em;
+  margin: .2em;
+}
+
+.checkout-transp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discout-coupon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 1em -10em 1em;
+  height: 100px;
+}
+
+.coupon-input {
+  margin: 1em;
+  padding: .5em;
+}
+
+.coupon-btn {
+  margin: 1em;
+  padding: .5em;
+}
+
+.checkout-subtotal,
+.checkout-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-btn {
+  margin: 1em;
+  padding: .5em;
 }
